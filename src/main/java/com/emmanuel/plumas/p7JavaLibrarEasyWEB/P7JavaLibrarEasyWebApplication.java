@@ -2,8 +2,10 @@ package com.emmanuel.plumas.p7JavaLibrarEasyWEB;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 
 @SpringBootApplication
+@EnableFeignClients("com.emmanuel.plumas.p7JavaLibrarEasyWEB")
 public class P7JavaLibrarEasyWebApplication {
 
 	public static void main(String[] args) {
