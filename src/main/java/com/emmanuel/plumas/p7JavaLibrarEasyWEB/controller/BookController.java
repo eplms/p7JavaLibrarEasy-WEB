@@ -8,13 +8,13 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import com.emmanuel.plumas.p7JavaLibrarEasyWEB.model.BookEntity;
-import com.emmanuel.plumas.p7JavaLibrarEasyWEB.proxies.BookProxy;
+import com.emmanuel.plumas.p7JavaLibrarEasyWEB.services.BookService;
 
 @Controller
 public class BookController {
 
 	@Autowired
-	private BookProxy bookProxy;
+	private BookService bookService;
 	
 	@GetMapping(value="/")
 	public String getIndex() {
@@ -24,7 +24,7 @@ public class BookController {
 	@GetMapping(value="/books")
 	public String getIndex(Model model) {
 		
-		List<BookEntity> bookEntities=bookProxy.getAllBooks();
+		List<BookEntity> bookEntities=bookService.getAllBooks();
 		model.addAttribute("bookEntities", bookEntities);
 	
 		return "books";
