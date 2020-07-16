@@ -5,8 +5,6 @@
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	</head>
 	<body>
-	
-	
 		<div class="container">
 			<div class="row jumbotron">
 				<div class="col"> 
@@ -14,10 +12,24 @@
 				</div>
 			</div>
 			<div class="row">
-				<ul>
-					<li><a th:href="@{http://localhost:8080/books}" >Liste des livres</a></li>
-					<li><a th:href="@{http://localhost:8080/bookByTitleSearch}">Rechercher un ouvrage</a></li>
-				</ul>
+				<h2>Résultat de votre recherche</h2>
+			</div>
+			<div class="row">
+					<table>
+		      			<tr>
+		        			<th>Titre</th>
+		        			<th>Type</th>
+		        			<th>Editeur</th>
+		        			<th>Auteur</th>
+		     			</tr>
+				      <tr th:each="book:${booksList}">
+				        <td th:text="${book.bookTitle }"></td>
+				        <td th:text="${book.bookType}"></td>
+				        <td th:text="${book.editor}"></td>
+				        <td th:text="${book.authorEntity.authorLastName}"></td>
+				        <td th:text="${book.authorEntity.authorFirstName}"></td>
+				      </tr>
+		    		</table>
 			</div>
 		</div>
 	

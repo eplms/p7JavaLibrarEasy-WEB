@@ -16,6 +16,10 @@ public interface BookProxy {
 	@GetMapping(value="books")
 	List<BookEntity> getAllBooks();
 	
+	/*
 	@GetMapping(value="book/{bookId}")
 	BookEntity getBooksById(@PathVariable("bookId") Long bookId);
+	*/
+	@GetMapping(value="book/{bookTitle}")
+	List<BookEntity> getBooksByTitle(@PathVariable String bookTitle);
 }
