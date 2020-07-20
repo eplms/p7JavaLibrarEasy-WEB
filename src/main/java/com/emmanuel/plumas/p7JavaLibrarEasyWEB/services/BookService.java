@@ -1,5 +1,6 @@
 package com.emmanuel.plumas.p7JavaLibrarEasyWEB.services;
 
+import java.util.Map;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,7 +18,7 @@ public class BookService {
 		return bookProxy.getAllBooks();
 	}
 
-	public List<BookEntity> getBookByTitle(BookEntity bookEntity) {
+	public Map<BookEntity,Integer> getBookByTitle(BookEntity bookEntity) {
 		return bookProxy.getBooksByTitle(bookEntity.getBookTitle());
 	}
 	

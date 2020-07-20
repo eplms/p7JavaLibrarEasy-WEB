@@ -1,5 +1,6 @@
 package com.emmanuel.plumas.p7JavaLibrarEasyWEB.proxies;
 
+import java.util.Map;
 import java.util.List;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,6 +21,7 @@ public interface BookProxy {
 	@GetMapping(value="book/{bookId}")
 	BookEntity getBooksById(@PathVariable("bookId") Long bookId);
 	*/
+	
 	@GetMapping(value="book/{bookTitle}")
-	List<BookEntity> getBooksByTitle(@PathVariable String bookTitle);
+	Map<BookEntity,Integer> getBooksByTitle(@PathVariable String bookTitle);
 }
