@@ -1,8 +1,6 @@
 package com.emmanuel.plumas.p7JavaLibrarEasyWEB.controller;
 
 import java.util.List;
-import java.util.Map;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,6 +9,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.emmanuel.plumas.p7JavaLibrarEasyWEB.model.BookEntity;
+import com.emmanuel.plumas.p7JavaLibrarEasyWEB.model.BookEntityAvailable;
 import com.emmanuel.plumas.p7JavaLibrarEasyWEB.services.BookService;
 
 @Controller
@@ -45,7 +44,7 @@ public class BookController {
 	
 	@PostMapping(value="/bookByTitleSearch")
 	public String getBookByTitle(Model model, @ModelAttribute("bookForm") BookEntity bookEntity) {
-		Map<Integer, BookEntity> bookByTitleResult=bookService.getBookByTitle(bookEntity);
+		List<BookEntityAvailable> bookByTitleResult=bookService.getBookByTitle(bookEntity);
 		model.addAttribute("booksList", bookByTitleResult);
 		return "bookByTitleResult";
 	}
