@@ -24,12 +24,12 @@
 		        			<th>Nombre d'exemplaires disponibles<th>
 		     			</tr>
 					    <tr th:each="book:${booksList}">
-					    	<td th:text="${book.key.bookTitle }"></td>
-					        <td th:text="${book.key.bookType}"></td>
-					        <td th:text="${book.key.editor}"></td>
-					        <td th:text="${book.key.authorEntity.authorLastName}"></td>
-					        <td th:text="${book.key.authorEntity.authorFirstName}"></td>
-					        <td th:text="${book.value}"></td>
+					    	<td th:text="${book.value.bookTitle }"></td>
+					        <td th:text="${book.value.bookType}"></td>
+					        <td th:text="${book.value.editor}"></td>
+					        <td th:text="${book.value.authorEntity.authorLastName}"></td>
+					        <td th:text="${book.value.authorEntity.authorFirstName}"></td>
+					        <td th:text="${book.key}"></td>
 					     </tr>
 		    		</table>
 			</div>

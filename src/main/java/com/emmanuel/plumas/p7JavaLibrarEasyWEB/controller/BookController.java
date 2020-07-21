@@ -45,7 +45,7 @@ public class BookController {
 	
 	@PostMapping(value="/bookByTitleSearch")
 	public String getBookByTitle(Model model, @ModelAttribute("bookForm") BookEntity bookEntity) {
-		Map<BookEntity,Integer> bookByTitleResult=bookService.getBookByTitle(bookEntity);
+		Map<Integer, BookEntity> bookByTitleResult=bookService.getBookByTitle(bookEntity);
 		model.addAttribute("booksList", bookByTitleResult);
 		return "bookByTitleResult";
 	}

@@ -23,5 +23,5 @@ public interface BookProxy {
 	*/
 	
 	@GetMapping(value="book/{bookTitle}")
-	Map<BookEntity,Integer> getBooksByTitle(@PathVariable String bookTitle);
+	Map<Integer, BookEntity> getBooksByTitle(@PathVariable String bookTitle);
 }

@@ -18,7 +18,7 @@ public class BookService {
 		return bookProxy.getAllBooks();
 	}
 
-	public Map<BookEntity,Integer> getBookByTitle(BookEntity bookEntity) {
+	public Map<Integer, BookEntity> getBookByTitle(BookEntity bookEntity) {
 		return bookProxy.getBooksByTitle(bookEntity.getBookTitle());
 	}
 	
