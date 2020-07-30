@@ -14,6 +14,10 @@
 				</div>
 			</div>
 			<div class="row">
+				<p th:text="'Vous êtes connecté en tant que : '+${principal}"></p>
+			</div>
+			
+			<div class="row">
 				<ul>
 					<li><a th:href="@{http://localhost:8080/books}" >Liste des livres</a></li>
 					<li><a th:href="@{http://localhost:8080/bookByTitleSearch}">Rechercher un ouvrage</a></li>

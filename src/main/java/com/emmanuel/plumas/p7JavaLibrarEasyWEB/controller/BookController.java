@@ -23,12 +23,12 @@ public class BookController {
 	public BookEntity setBookEntity() {
 		return new BookEntity();
 	}
-	
+	/*
 	@GetMapping(value="/")
 	public String getIndex() {
 		return "accueil";
 	}
-	
+	*/
 	@GetMapping(value="/books")
 	public String getBooks(Model model) {
 		
