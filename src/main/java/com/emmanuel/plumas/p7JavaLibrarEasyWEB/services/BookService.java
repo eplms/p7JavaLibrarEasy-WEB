@@ -6,20 +6,20 @@ import org.springframework.stereotype.Service;
 
 import com.emmanuel.plumas.p7JavaLibrarEasyWEB.model.BookEntity;
 import com.emmanuel.plumas.p7JavaLibrarEasyWEB.model.BookEntityAvailable;
-import com.emmanuel.plumas.p7JavaLibrarEasyWEB.proxies.BookProxy;
+import com.emmanuel.plumas.p7JavaLibrarEasyWEB.proxies.ApiProxy;
 
 @Service
 public class BookService {
 
 	@Autowired
-	private BookProxy bookProxy;
+	private ApiProxy apiProxy;
 	
 	public List<BookEntity> getAllBooks(){
-		return bookProxy.getAllBooks();
+		return apiProxy.getAllBooks();
 	}
 
 	public List<BookEntityAvailable> getBookByTitle(BookEntity bookEntity) {
-		return bookProxy.getBooksByTitle(bookEntity.getBookTitle());
+		return apiProxy.getBooksByTitle(bookEntity.getBookTitle());
 	}
 	
 	

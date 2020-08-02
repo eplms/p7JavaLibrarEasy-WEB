@@ -5,18 +5,18 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import com.emmanuel.plumas.p7JavaLibrarEasyWEB.model.UserEntity;
-import com.emmanuel.plumas.p7JavaLibrarEasyWEB.proxies.UserProxy;
+import com.emmanuel.plumas.p7JavaLibrarEasyWEB.proxies.ApiProxy;
 
 @Service
 @Qualifier("UserService")
 public class UserService {
 
 	@Autowired
-	@Qualifier("UserProxy")
-	private UserProxy userProxy;
+	@Qualifier("ApiProxy")
+	private ApiProxy apiProxy;
 	
 	public UserEntity findByLastName(String userLastName) {
-		UserEntity userEntity=userProxy.getUserByLastName(userLastName);
+		UserEntity userEntity=apiProxy.getUserByLastName(userLastName);
 		return userEntity;
 	}
 	
