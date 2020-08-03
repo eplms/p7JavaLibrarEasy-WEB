@@ -5,8 +5,6 @@
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	</head>
 	<body>
-	
-	
 		<div class="container">
 			<div class="row jumbotron">
 				<div class="col"> 
@@ -14,15 +12,31 @@
 				</div>
 			</div>
 			<div class="row">
-				<p th:text="'Vous êtes connecté en tant que : '+${principal}"></p>
+				<h2 th:text="'Liste des prêts de : '+${principal}"></h2>
 			</div>
-			
 			<div class="row">
-				<ul>
-					<li><a th:href="@{http://localhost:8080/books}" >Liste des livres</a></li>
-					<li><a th:href="@{http://localhost:8080/bookByTitleSearch}">Rechercher un ouvrage</a></li>
-					<li><a th:href="@{http://localhost:8080/borrowByUserLastName}">Liste des emprunts de l'utilisateur</a></li>
-				</ul>
+				<div class="col">		
+					<table class="table table-hover table-sm table-bordered">
+		      			<tr>
+		        			<th>Date d'emprunt</th>
+		        			<th>Date de fin de prêt</th>
+		        			<th>Titre</th>
+		        			<th>Nom de l'Auteur</th>
+		        			<th>Prénom de l'auteur</th>
+		        			<th>Type</th>
+		        			<th>Editeur</th>
+		     			</tr>
+					    <tr th:each="borrow:${borrowEntities}">
+					    	<td th:text="${#dates.format(borrow.startDate,'dd-MM-yyyy')}"></td>
+					        <td th:text="${#dates.format(borrow.endDate,'dd-MM-yyyy')}"></td>
+					        <td th:text="${borrow.copyEntity.bookEntity.bookTitle }"></td>
+					        <td th:text="${borrow.copyEntity.bookEntity.authorEntity.authorLastName}"></td>
+					        <td th:text="${borrow.copyEntity.bookEntity.authorEntity.authorFirstName}"></td>
+					        <td th:text="${borrow.copyEntity.bookEntity.bookType}"></td>
+					        <td th:text="${borrow.copyEntity.bookEntity.editor}"></td>
+					     </tr>
+		    		</table>
+		    	</div>	
 			</div>
 		</div>
 	
