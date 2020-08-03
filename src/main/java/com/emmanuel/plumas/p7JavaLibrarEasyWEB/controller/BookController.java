@@ -13,7 +13,7 @@ import com.emmanuel.plumas.p7JavaLibrarEasyWEB.model.BookEntityAvailable;
 import com.emmanuel.plumas.p7JavaLibrarEasyWEB.services.BookService;
 
 @Controller
-public class BookController {
+public class BookController extends CommonController{
 
 	@Autowired
 	private BookService bookService;
