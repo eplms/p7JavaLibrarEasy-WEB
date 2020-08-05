@@ -21,8 +21,11 @@ public class BorrowController extends CommonController{
 	@GetMapping(value="/borrowByUserLastName")
 	public String getBorrowByUserLastName(Model model)  {
 		String userLastName=getPrincipal();
-		List<BorrowEntity> borrowEntities=borrowService.getBorrowByUserLastName(userLastName);
-		model.addAttribute("borrowEntities", borrowEntities);
+		List<BorrowEntity> oldBorrowEntities=borrowService.getOldBorrowByUserLastName(userLastName);
+		List<BorrowEntity> currentBorrowEntities=borrowService.getCurrentBorrowByUserLastName(userLastName);
+		
+		model.addAttribute("oldBorrowEntities", oldBorrowEntities);
+		model.addAttribute("currentBorrowEntities", currentBorrowEntities);
 		model.addAttribute("principal",userLastName);
 		return "borrowByUserLastName";
 	}
