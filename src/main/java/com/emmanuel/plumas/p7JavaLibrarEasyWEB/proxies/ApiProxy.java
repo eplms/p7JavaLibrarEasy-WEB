@@ -4,7 +4,6 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.cloud.openfeign.FeignClient;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
@@ -37,4 +36,7 @@ public interface ApiProxy {
 	@GetMapping(value="borrow/{userLastName}")
 	List<BorrowEntity> getBorrowByUserName(@PathVariable String userLastName);
 	
+	
+	@GetMapping(value="borrow/extendBorrow/{borrowId}")
+	public void setExtendBorrow(@PathVariable Long borrowId);
 }

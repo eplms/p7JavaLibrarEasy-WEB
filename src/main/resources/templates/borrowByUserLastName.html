@@ -42,6 +42,7 @@
 			        			<th>Prénom de l'auteur</th>
 			        			<th>Type</th>
 			        			<th>Editeur</th>
+			        			
 			     			</tr>
 						    <tr th:each="borrow:${currentBorrowEntities}">
 						    	<td th:text="${#dates.format(borrow.startDate,'dd-MM-yyyy')}"></td>
@@ -51,6 +52,9 @@
 						        <td th:text="${borrow.copyEntity.bookEntity.authorEntity.authorFirstName}"></td>
 						        <td th:text="${borrow.copyEntity.bookEntity.bookType}"></td>
 						        <td th:text="${borrow.copyEntity.bookEntity.editor}"></td>
+						        <td th:if="${borrow.isExtended==false}">
+						        	<a th:href="@{/borrow/extendBorrow/{borrowId}(borrowId=${borrow.borrowId})}">Prolonger</a>
+						        </td>
 						     </tr>
 			    		</table>
 			    	</div>	

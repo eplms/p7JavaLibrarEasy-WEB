@@ -43,4 +43,8 @@ public class BorrowService {
 		}
 		return oldBorrowEntities;
 	}
+
+	public void extendBorrow(Long borrowId) {
+		apiProxy.setExtendBorrow(borrowId);
+	}
 }

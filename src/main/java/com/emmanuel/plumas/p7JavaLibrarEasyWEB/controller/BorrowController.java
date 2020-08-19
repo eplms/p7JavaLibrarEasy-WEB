@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import com.emmanuel.plumas.p7JavaLibrarEasyWEB.model.BorrowEntity;
 import com.emmanuel.plumas.p7JavaLibrarEasyWEB.services.BorrowService;
@@ -30,4 +31,10 @@ public class BorrowController extends CommonController{
 		return "borrowByUserLastName";
 	}
 	
+	@GetMapping(value="/borrow/extendBorrow/{borrowId}")
+	public String setExtendBorrow (@PathVariable Long borrowId) {
+		borrowService.extendBorrow(borrowId);
+		/* Redirection pour recharger les données" */
+		return"redirect:/borrowByUserLastName";
+	}
 }
