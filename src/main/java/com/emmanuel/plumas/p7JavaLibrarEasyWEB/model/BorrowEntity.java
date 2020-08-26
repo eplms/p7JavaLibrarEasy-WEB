@@ -12,6 +12,7 @@ public class BorrowEntity {
 	private CopyEntity copyEntity;
 	private UserEntity userEntity;
 	private Boolean isExtended;
+	private Boolean isReturned; 
 	
 	public BorrowEntity() {
 		super();
@@ -65,10 +66,18 @@ public class BorrowEntity {
 		this.isExtended = isExtended;
 	}
 
+	public Boolean getIsReturned() {
+		return isReturned;
+	}
+
+	public void setIsReturned(Boolean isReturned) {
+		this.isReturned = isReturned;
+	}
+	
 	@Override
 	public String toString() {
 		return "BorrowEntity [borrowId=" + borrowId + ", startDate=" + startDate + ", endDate=" + endDate
-				+ ", copyEntity=" + copyEntity + ", userEntity=" + userEntity + ", isExtended=" + isExtended + "]";
+				+ ", copyEntity=" + copyEntity + ", userEntity=" + userEntity + ", isExtended=" + isExtended + ", isReturned=" + isReturned + "]";
 	}
 
 	
