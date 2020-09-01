@@ -17,8 +17,6 @@ import com.emmanuel.plumas.p7JavaLibrarEasyWEB.model.BookEntity;
 @Qualifier("ApiProxy")
 public interface ApiProxy {
 	
-	
-	
 	@GetMapping(value="books")
 	List<BookEntity> getAllBooks();
 	
@@ -35,7 +33,6 @@ public interface ApiProxy {
 
 	@GetMapping(value="borrow/{userLastName}")
 	List<BorrowEntity> getBorrowByUserName(@PathVariable String userLastName);
-	
 	
 	@GetMapping(value="borrow/extendBorrow/{borrowId}")
 	public void setExtendBorrow(@PathVariable Long borrowId);
