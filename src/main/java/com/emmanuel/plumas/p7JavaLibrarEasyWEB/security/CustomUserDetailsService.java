@@ -10,7 +10,7 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+//import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.emmanuel.plumas.p7JavaLibrarEasyWEB.model.UserEntity;
@@ -28,7 +28,8 @@ public class CustomUserDetailsService implements UserDetailsService{
 	
 	public UserDetails loadUserByUsername(String userLastName) throws UsernameNotFoundException{
 		UserEntity userEntity=userService.findByLastName(userLastName);
-		userEntity.setUserPassword(new BCryptPasswordEncoder().encode(userEntity.getUserPassword()));
+		//Ligne suivante si les password ne sont pas encryptés en BDD
+		//userEntity.setUserPassword(new BCryptPasswordEncoder().encode(userEntity.getUserPassword()));
 		return new org.springframework.security.core.userdetails.User(userEntity.getUserLastName(), userEntity.getUserPassword(), getGrantedAuthorities());
 	}
 
