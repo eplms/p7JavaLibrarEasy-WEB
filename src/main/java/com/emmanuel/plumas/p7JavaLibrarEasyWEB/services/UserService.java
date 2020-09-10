@@ -19,5 +19,4 @@ public class UserService {
 		UserEntity userEntity=apiProxy.getUserByLastName(userLastName);
 		return userEntity;
 	}
-	
 }

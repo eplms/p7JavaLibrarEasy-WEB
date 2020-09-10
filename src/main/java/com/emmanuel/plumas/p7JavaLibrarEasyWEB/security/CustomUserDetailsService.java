@@ -28,8 +28,6 @@ public class CustomUserDetailsService implements UserDetailsService{
 	
 	public UserDetails loadUserByUsername(String userLastName) throws UsernameNotFoundException{
 		UserEntity userEntity=userService.findByLastName(userLastName);
-		//Ligne suivante si les password ne sont pas encryptés en BDD
-		//userEntity.setUserPassword(new BCryptPasswordEncoder().encode(userEntity.getUserPassword()));
 		return new org.springframework.security.core.userdetails.User(userEntity.getUserLastName(), userEntity.getUserPassword(), getGrantedAuthorities());
 	}
 
@@ -38,5 +36,4 @@ public class CustomUserDetailsService implements UserDetailsService{
 		authorities.add(new SimpleGrantedAuthority("USER"));
 		return authorities;
 	}
-	
 }

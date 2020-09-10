@@ -21,7 +21,4 @@ public class BookService {
 	public List<BookEntityAvailable> getBookByTitle(BookEntity bookEntity) {
 		return apiProxy.getBooksByTitle(bookEntity.getBookTitle());
 	}
-	
-	
-	
 }

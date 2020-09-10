@@ -23,15 +23,9 @@ public class BookController extends CommonController{
 	public BookEntity setBookEntity() {
 		return new BookEntity();
 	}
-	/*
-	@GetMapping(value="/")
-	public String getIndex() {
-		return "accueil";
-	}
-	*/
+	
 	@GetMapping(value="/books")
-	public String getBooks(Model model) {
-		
+	public String getBooks(Model model) {	
 		List<BookEntity> bookEntities=bookService.getAllBooks();
 		model.addAttribute("bookEntities", bookEntities);
 		return "books";
@@ -48,5 +42,4 @@ public class BookController extends CommonController{
 		model.addAttribute("booksList", bookByTitleResult);
 		return "bookByTitleResult";
 	}
-
 }

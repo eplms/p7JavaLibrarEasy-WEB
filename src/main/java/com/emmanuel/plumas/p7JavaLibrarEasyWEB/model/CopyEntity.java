@@ -31,7 +31,4 @@ public class CopyEntity {
 	public String toString() {
 		return "CopyEntity [copyId=" + copyId + ", bookEntity=" + bookEntity + "]";
 	}
-	
-	
-	
 }

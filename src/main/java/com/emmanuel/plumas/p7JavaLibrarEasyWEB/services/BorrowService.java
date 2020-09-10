@@ -18,8 +18,7 @@ public class BorrowService {
 	@Autowired
 	@Qualifier("ApiProxy")
 	private ApiProxy apiProxy;
-	
-	
+		
 	public List<BorrowEntity> getCurrentBorrowByUserLastName(String userLastName){
 		List<BorrowEntity> borrowEntities=apiProxy.getBorrowByUserName(userLastName);
 		List<BorrowEntity> currentBorrowEntities=new ArrayList<BorrowEntity>();

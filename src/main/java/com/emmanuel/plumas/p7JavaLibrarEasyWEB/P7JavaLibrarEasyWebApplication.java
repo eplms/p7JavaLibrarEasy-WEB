@@ -14,7 +14,7 @@ public class P7JavaLibrarEasyWebApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(P7JavaLibrarEasyWebApplication.class, args);
 		
-		/* permettre une list JSON avec une seule valeur dans ce json */
+		/* Permettre une list JSON ne comportant qu'une seule valeur dans ce json */
 		ObjectMapper mapper = new ObjectMapper();
         mapper.enable(DeserializationFeature.ACCEPT_SINGLE_VALUE_AS_ARRAY);
 	}

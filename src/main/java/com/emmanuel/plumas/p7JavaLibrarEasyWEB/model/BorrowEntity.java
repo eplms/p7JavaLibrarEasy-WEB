@@ -5,7 +5,6 @@ import java.util.Date;
 
 public class BorrowEntity {
 
-	
 	private Long borrowId;
 	private Date startDate;
 	private Date endDate;
@@ -79,8 +78,4 @@ public class BorrowEntity {
 		return "BorrowEntity [borrowId=" + borrowId + ", startDate=" + startDate + ", endDate=" + endDate
 				+ ", copyEntity=" + copyEntity + ", userEntity=" + userEntity + ", isExtended=" + isExtended + ", isReturned=" + isReturned + "]";
 	}
-
-	
-	
-	
 }

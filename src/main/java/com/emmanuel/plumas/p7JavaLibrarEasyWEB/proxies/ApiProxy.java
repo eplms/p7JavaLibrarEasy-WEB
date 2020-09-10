@@ -20,11 +20,6 @@ public interface ApiProxy {
 	@GetMapping(value="books")
 	List<BookEntity> getAllBooks();
 	
-	/*
-	@GetMapping(value="book/{bookId}")
-	BookEntity getBooksById(@PathVariable("bookId") Long bookId);
-	*/
-	
 	@GetMapping(value="book/{bookTitle}")
 	List<BookEntityAvailable> getBooksByTitle(@PathVariable String bookTitle);
 	

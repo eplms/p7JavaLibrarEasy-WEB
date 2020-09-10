@@ -32,6 +32,4 @@ public class AuthorEntity {
 		return "AuthorEntity [authorId=" + authorId + ", authorLastName=" + authorLastName + ", authorFirstName="
 				+ authorFirstName + "]";
 	}
-	
-	
 }

@@ -66,7 +66,5 @@ public class UserEntity {
 		return "UserEntity [userId=" + userId + ", userLastName=" + userLastName + ", userFirstName=" + userFirstName
 				+ ", userPhoneNumber=" + userPhoneNumber + ", userEmail=" + userEmail + ", userPassword=" + userPassword
 				+ "]";
-	}
-	
-	
+	}	
 }

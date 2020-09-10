@@ -2,7 +2,6 @@ package com.emmanuel.plumas.p7JavaLibrarEasyWEB.model;
 
 
 public class BookEntity {
-
 	
 	private Long bookId;
 	private String bookTitle;
@@ -58,11 +57,5 @@ public class BookEntity {
 	public String toString() {
 		return "BookEntity [bookId=" + bookId + ", bookTitle=" + bookTitle + ", editor=" + editor + ", bookType="
 				+ bookType + "]";
-	}
-	
-	
-	
-
-	
-	
+	}	
 }
